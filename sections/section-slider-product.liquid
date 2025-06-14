@@ -1,0 +1,191 @@
+
+{% if section.blocks.size > 0 %}
+    <div class="slider-product-proposal">
+  <div class="page-width slider-product-proposal__container ">
+    <div class="slider-product-proposal__content">
+      <h2 class="slider-product-proposal__title">{{section.settings.slider_title}}</h2>
+      <div class="slider-product-proposal__subtitle">{{section.settings.slider_subtitle}}</div>
+    </div>
+    <div class="slider-product-proposal__slider">
+      <div class="slider-product-proposal_slider-list" >
+
+        {% for block in section.blocks %}
+
+          {% if block.settings.proposal_product != blank %}
+
+            {% assign product = block.settings.proposal_product %}
+
+            <div class="slider-product-proposal__slider-item" style="margin-right: {{section.settings.items_margin }}px;">
+
+              <a href="{{ product.url }}" class="slider-item__link">
+
+
+                <div class="slider-item__image">
+                  <img src="{{ product.featured_image | image_url: width: "300px" }}" alt="{{product.featured_image.alt |  default: product.title  }}" class="slider-item__picture" loading="lazy">
+                </div>
+
+                <h4 class="slider-item__title">{{product.title}}</h4>
+                
+                {% if block.content != blank %}
+                  <div class="slider-item__content">
+          
+                    {{product.content |  truncate: 120, "..."}}
+
+                  </div>
+                {% endif %}
+
+                <div class="slideer-item__price">
+                  {{product.price | money}}
+                </div>
+                
+
+              </a>
+            </div>
+          {% endif %}
+
+          
+
+        {% endfor %}
+
+        
+       
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+
+{{ 'slick.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'jquery-3.7.1.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      $('#shopify-section-{{section.id}} .slider-product-proposal_slider-list').slick({
+      infinite: true,
+      slidesToShow: {{section.settings.slider_items}},
+      
+      // slidesToScroll: 2,
+      speed: 1000,
+      dots: {{section.settings.show_dots}},
+      responsive: [
+        {
+          breakpoint: 5000,
+          settings: {
+            slidesToShow: {{section.settings.slider_items}},
+            // slidesToScroll: {{section.settings.slider_items}},
+            arrows: {{section.settings.show_arrows}}
+          }
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: {{section.settings.slider_items_tab}},
+            // slidesToScroll: {{section.settings.slider_items_tab}}
+            
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: {{section.settings.slider_items_mob}},
+            // slidesToScroll: {{section.settings.slider_items_mob}}
+          }
+        }
+        
+      ]
+      });
+    });
+    
+  </script>
+
+
+{% schema %}
+{
+  "name": "Slider Products",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "slider_items",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Items on slide",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "slider_items_tab",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Items on slide tablet",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slider_items_mob",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Items on slide mobile",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "slider_title",
+      "label": "Slider Title",
+      "default": "Slider title"
+    },
+    {
+      "type": "textarea",
+      "id": "slider_subtitle",
+      "label": "Slider Subtitle",
+      "default": "perfect products"
+    },
+    {
+      "type": "range",
+      "id": "items_margin",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "label": "Distance between blocks",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Proposal Product",
+      "settings":[
+        {
+          "type": "product",
+          "id": "proposal_product",
+          "label": "Our proposal Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider Products"
+    }
+  ]
+}
+{% endschema %}

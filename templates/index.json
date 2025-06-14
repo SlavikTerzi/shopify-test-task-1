@@ -1,0 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "section_slider_product_MLDdjk": {
+      "type": "section-slider-product",
+      "blocks": {
+        "product_tVCWNP": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "pancile"
+          }
+        },
+        "product_3z4nnD": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "pensil-2"
+          }
+        },
+        "product_EgaEUp": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "pensil-3"
+          }
+        },
+        "product_rUi3nn": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "pensil-4"
+          }
+        }
+      },
+      "block_order": [
+        "product_tVCWNP",
+        "product_3z4nnD",
+        "product_EgaEUp",
+        "product_rUi3nn"
+      ],
+      "settings": {
+        "slider_items": 3,
+        "slider_items_tab": 2,
+        "slider_items_mob": 1,
+        "show_arrows": true,
+        "show_dots": false,
+        "slider_title": "Slider title",
+        "slider_subtitle": "perfect products",
+        "items_margin": 20
+      }
+    },
+    "section_slider_product_y6fmaw": {
+      "type": "section-slider-product",
+      "blocks": {
+        "product_d9LYWn": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "pancile"
+          }
+        },
+        "product_AtBnKV": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "pensil-2"
+          }
+        },
+        "product_r8M9eb": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "pensil-3"
+          }
+        },
+        "product_cjnN9F": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "pensil-4"
+          }
+        }
+      },
+      "block_order": [
+        "product_d9LYWn",
+        "product_AtBnKV",
+        "product_r8M9eb",
+        "product_cjnN9F"
+      ],
+      "name": "Slider Products",
+      "settings": {
+        "slider_items": 2,
+        "slider_items_tab": 2,
+        "slider_items_mob": 1,
+        "show_arrows": false,
+        "show_dots": true,
+        "slider_title": "Slider title",
+        "slider_subtitle": "perfect products",
+        "items_margin": 20
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "section_slider_product_MLDdjk",
+    "section_slider_product_y6fmaw"
+  ]
+}
